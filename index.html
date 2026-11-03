@@ -863,4 +863,176 @@
 
           <p>
             Interested in website monetization?
-            Explore Adsterra through my referral li
+            Explore Adsterra through my referral link.
+          </p>
+
+          <a
+            href="https://beta.publishers.adsterra.com/referral/ynZFm74WpE"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <img
+              class="referral-banner"
+              src="https://landings-cdn.adsterratech.com/referralBanners/gif/468x60_adsterra_reff.gif"
+              alt="Adsterra referral banner"
+              loading="lazy">
+
+          </a>
+
+          <a
+            class="referral-link"
+            href="https://beta.publishers.adsterra.com/referral/ynZFm74WpE"
+            target="_blank"
+            rel="noopener noreferrer">
+            Join Adsterra →
+          </a>
+
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT ME -->
+
+    <section id="about">
+      <div class="container">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-box">
+          <h3>Developer: Netha Manoj</h3>
+
+          <p>
+            Welcome to AI TOOLS. This website is created to bring
+            useful AI applications together in one place.
+            My goal is to explore technology and develop helpful
+            digital tools for everyone.
+          </p>
+        </div>
+          </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <div class="container">
+
+        <h2 class="section-title">Contact</h2>
+
+        <div class="about-box">
+
+          <h3>Have a suggestion or feedback?</h3>
+
+          <p>
+            Contact me for suggestions, feedback or questions
+            about the website.
+          </p>
+
+          <a
+            class="contact-email"
+            href="mailto:nethamanoj36@gmail.com">
+            nethamanoj36@gmail.com
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>© 2026 AI TOOLS. All rights reserved.</p>
+    <p>Designed and developed by Netha Manoj.</p>
+  </footer>
+   <!-- JAVASCRIPT -->
+
+  <script>
+    /* MOBILE MENU */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const sideMenu = document.getElementById("sideMenu");
+
+    menuBtn.addEventListener("click", function () {
+      const isOpen = sideMenu.classList.toggle("open");
+
+      menuBtn.textContent = isOpen ? "✕" : "☰";
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    /* CLOSE MENU WHEN LINK IS CLICKED */
+
+    document.querySelectorAll(".side-menu a").forEach(link => {
+      link.addEventListener("click", function () {
+        sideMenu.classList.remove("open");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    /* CLOSE MENU WHEN CLICKING OUTSIDE */
+
+    document.addEventListener("click", function (event) {
+      if (
+        !sideMenu.contains(event.target) &&
+        !menuBtn.contains(event.target)
+      ) {
+        sideMenu.classList.remove("open");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* SEARCH APPLICATIONS */
+
+    const searchInput = document.getElementById("appSearch");
+    const appCards = document.querySelectorAll(".app-card");
+    const emptyMessage = document.getElementById("emptyMessage");
+
+    searchInput.addEventListener("input", function () {
+      const searchValue = this.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      appCards.forEach(card => {
+        const searchableText =
+          (card.dataset.name || card.textContent).toLowerCase();
+
+        const matches = searchableText.includes(searchValue);
+
+        card.style.display = matches ? "" : "none";
+
+        if (matches) {
+          visibleCount++;
+        }
+      });
+
+      emptyMessage.style.display =
+        visibleCount === 0 ? "block" : "none";
+    });
+
+    /* STAR RATING */
+
+    const starButtons = document.querySelectorAll("#stars button");
+    const ratingMessage = document.getElementById("ratingMessage");
+
+    let selectedRating = Number(
+      localStorage.getItem("trueframeRating") || 0
+    );
+          updateStars();
+
+    starButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        selectedRating = Number(this.dataset.rating);
+
+        localStorage.setItem(
+          "trueframeRating",
+          String(selectedRating)
+        );
+
+        updateStars();
+
+        ratingMessage.textContent =
+          "Your " + selectedRating +
+          "-star rating is saved on this device.";
+      });
+    });
+          
