@@ -1,0 +1,866 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI TOOLS | Free AI Applications</title>
+  <meta name="description" content="Explore useful AI applications and tools in one place.">
+  <meta name="theme-color" content="#080d1c">
+
+  <!-- Monetag Verification -->
+  <meta name="monetag" content="6d38d82513ff9c289464cbcdb854a331">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  
+  <!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695007885838043"
+     crossorigin="anonymous"></script>
+  
+    <meta name="google-adsense-account" content="ca-pub-2695007885838043">
+  
+  <!-- Adsterra Advertising Scripts -->
+  <script data-cfasync="false"
+    src="https://bellnewyork.org/14/f9d0c1b2866f35b35137d42762da10c9"></script>
+
+  <script data-cfasync="false"
+    src="https://accountut.com/1/179b529c46b66a81aa8b6c6b670e60df"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080d1c;
+      color: #f5f7ff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: #0c1428;
+      border-bottom: 1px solid #202c48;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #48a5ff;
+    }
+
+    .menu-btn {
+      width: 43px;
+      height: 43px;
+      border: 1px solid #344465;
+      background: #17233d;
+      color: white;
+      border-radius: 10px;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* NAVIGATION */
+
+    .side-menu {
+      position: fixed;
+      top: 75px;
+      right: -280px;
+      width: 260px;
+      height: calc(100vh - 75px);
+      background: #101b32;
+      border-left: 1px solid #283956;
+      padding: 25px;
+      z-index: 99;
+      transition: right 0.3s ease;
+    }
+
+    .side-menu.open {
+      right: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 9px;
+      color: #dce7ff;
+      background: #192641;
+    }
+
+    .side-menu a:hover {
+      background: #236ed1;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      padding: 85px 15px 65px;
+      background:
+        radial-gradient(ellipse at top, #163d72 0%, #0b1830 45%, #080d1c 85%);
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 7vw, 65px);
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
+
+    .hero h1 span {
+      color: #50a8ff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #b8c7e3;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 28px;
+      background: #2787f5;
+      border-radius: 9px;
+      font-weight: bold;
+    }
+
+    .hero-btn:hover,
+    .download-btn:hover,
+    .referral-link:hover {
+      background: #1267c9;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 65px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #9eafcc;
+      margin-bottom: 35px;
+      line-height: 1.6;
+    }
+
+    /* SEARCH */
+
+    .search-box {
+      max-width: 550px;
+      margin: 0 auto 35px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 16px 18px;
+      background: #121e35;
+      border: 1px solid #314564;
+      border-radius: 10px;
+      color: white;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .search-box input:focus {
+      border-color: #429cff;
+    }
+
+    /* APP CARDS */
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .app-card {
+      background: #111c32;
+      border: 1px solid #263957;
+      border-radius: 15px;
+      padding: 24px 20px;
+      transition: 0.25s;
+      min-height: 190px;
+    }
+
+    .app-card:hover {
+      transform: translateY(-5px);
+      border-color: #3898ff;
+      box-shadow: 0 10px 30px #0005;
+    }
+
+    .app-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: #1d3e6d;
+      font-size: 25px;
+      margin-bottom: 17px;
+    }
+
+    .app-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .app-card p {
+      font-size: 13px;
+      color: #aebed9;
+      line-height: 1.6;
+      margin-bottom: 17px;
+    }
+
+    .app-status {
+      display: inline-block;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: #173e31;
+      color: #65e5a8;
+    }
+
+    .coming {
+      background: #3a2d19;
+      color: #ffd17a;
+    }
+
+    .download-btn {
+      display: inline-block;
+      border: none;
+      padding: 11px 17px;
+      background: #287fe5;
+      color: white;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-top: 13px;
+      cursor: pointer;
+    }
+
+    .empty-message {
+      display: none;
+      text-align: center;
+      color: #aebed9;
+      padding: 30px;
+    }
+
+    /* FEATURES */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .feature {
+      background: #111c32;
+      border: 1px solid #263957;
+      border-radius: 13px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .feature .app-icon {
+      margin: 0 auto 15px;
+    }
+
+    .feature p {
+      color: #aebed9;
+      line-height: 1.7;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    /* TRUEFRAME DETAILS */
+
+    .details-box {
+      max-width: 750px;
+      margin: auto;
+      background: #111c32;
+      border: 1px solid #263957;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .details-box h3 {
+      margin-bottom: 12px;
+    }
+
+    .details-box p {
+      color: #b8c7e3;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .rating {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #344765;
+    }
+
+    .stars button {
+      background: none;
+      border: none;
+      font-size: 29px;
+      color: #71809a;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    .stars button.selected {
+      color: #ffca48;
+    }
+
+    .rating-message {
+      color: #65e5a8;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .feedback label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .feedback textarea {
+      width: 100%;
+      min-height: 90px;
+      resize: vertical;
+      background: #0b1427;
+      color: white;
+      border: 1px solid #344765;
+      border-radius: 8px;
+      padding: 11px;
+      outline: none;
+    }
+
+    .feedback button {
+      margin-top: 10px;
+      padding: 11px 17px;
+      background: #2787f5;
+      border: none;
+      color: white;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    /* REFERRAL */
+
+    .referral-box {
+      background: linear-gradient(130deg, #142c4c, #17234a);
+      border: 1px solid #35527d;
+      border-radius: 16px;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .referral-box h2 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .referral-box p {
+      color: #c0cce1;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .referral-banner {
+      display: block;
+      max-width: 100%;
+      width: 468px;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 5px;
+    }
+
+    .referral-link {
+      display: inline-block;
+      background: #2787f5;
+      padding: 12px 23px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    /* ABOUT AND CONTACT */
+
+    .about-box {
+      max-width: 750px;
+      margin: auto;
+      text-align: center;
+      background: #111c32;
+      border: 1px solid #263957;
+      border-radius: 15px;
+      padding: 30px;
+    }
+
+    .about-box p {
+      color: #b8c7e3;
+      line-height: 1.9;
+      margin-top: 12px;
+    }
+
+    .contact-email {
+      color: #58aaff;
+      display: inline-block;
+      margin-top: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0c1428;
+      border-top: 1px solid #263957;
+      text-align: center;
+      padding: 25px 15px;
+      color: #9eafcc;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+      header {
+        height: 65px;
+      }
+
+      .side-menu {
+        top: 65px;
+        height: calc(100vh - 65px);
+      }
+
+      .hero {
+        padding: 65px 15px 50px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .section-title {
+        font-size: 27px;
+      }
+
+      .app-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .app-card {
+        padding: 17px 13px;
+      }
+
+      .app-card h3 {
+        font-size: 15px;
+      }
+
+      .app-card p {
+        font-size: 12px;
+      }
+
+      .app-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 21px;
+      }
+
+      .about-box,
+      .details-box {
+        padding: 22px 16px;
+      }
+    }
+
+    @media (max-width: 340px) {
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <a href="#home" class="logo">AI <span>TOOLS</span></a>
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false">
+      ☰
+    </button>
+  </header>
+
+  <!-- MENU -->
+
+  <nav class="side-menu" id="sideMenu">
+    <a href="#home">🏠 Home</a>
+    <a href="#apps">🤖 AI Tools</a>
+    <a href="#features">⭐ Features</a>
+    <a href="#trueframe">🛡️ TrueFrame</a>
+    <a href="#referral">📢 Referral</a>
+    <a href="#about">👨‍💻 About Me</a>
+    <a href="#contact">✉️ Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>Explore the Future of <span>AI</span></h1>
+
+        <p>
+          Discover useful AI-powered applications in one place.
+          Explore innovative tools designed to make your digital
+          experience easier, smarter and more productive.
+        </p>
+
+        <a href="#apps" class="hero-btn">
+          Explore AI Tools →
+        </a>
+      </div>
+    </section>
+
+    <!-- AI TOOLS -->
+
+    <section id="apps">
+      <div class="container">
+
+        <h2 class="section-title">Our AI Applications</h2>
+
+        <p class="section-subtitle">
+          Explore available applications and upcoming AI projects.
+        </p>
+
+        <div class="search-box">
+          <input
+            type="search"
+            id="appSearch"
+            placeholder="🔍 Search AI tools..."
+            aria-label="Search AI tools">
+        </div>
+
+        <div class="app-grid" id="appGrid">
+
+          <!-- TRUEFRAME -->
+
+          <article class="app-card"
+            data-name="trueframe ai real fake image video text detector">
+
+            <div class="app-icon">🛡️</div>
+
+            <h3>TrueFrame</h3>
+
+            <p>
+              AI-generated versus real content detection application.
+            </p>
+
+            <span class="app-status">Available</span>
+
+            <br>
+
+            <a
+              class="download-btn"
+              href="https://github.com/Manojxear/TRUE-FRAME/releases/download/AI/trueframe.apk"
+              target="_blank"
+              rel="noopener noreferrer">
+              ⬇ Download APK
+            </a>
+
+          </article>
+
+          <!-- COMING SOON APPS -->
+
+          <article class="app-card" data-name="text summarizer">
+            <div class="app-icon">📝</div>
+            <h3>Text Summarizer</h3>
+            <p>Summarize long text into shorter content.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="grammar checker">
+            <div class="app-icon">✍️</div>
+            <h3>Grammar Checker</h3>
+            <p>Check grammar and improve your writing.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="email generator">
+            <div class="app-icon">📧</div>
+            <h3>Email Generator</h3>
+            <p>Create professional emails quickly.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="quiz generator">
+            <div class="app-icon">🧠</div>
+            <h3>Quiz Generator</h3>
+            <p>Generate quizzes for learning and practice.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="caption generator">
+            <div class="app-icon">📱</div>
+            <h3>Caption Generator</h3>
+            <p>Generate creative social media captions.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="resume builder">
+            <div class="app-icon">📄</div>
+            <h3>Resume Builder</h3>
+            <p>Create clean and professional resumes.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="language translator">
+            <div class="app-icon">🌐</div>
+            <h3>Language Translator</h3>
+            <p>Translate text between different languages.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="prompt generator">
+            <div class="app-icon">💡</div>
+            <h3>Prompt Generator</h3>
+            <p>Create useful prompts for AI applications.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="fake news checker">
+            <div class="app-icon">🔎</div>
+            <h3>Fake News Checker</h3>
+            <p>Explore tools for checking information and claims.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="code explainer">
+            <div class="app-icon">💻</div>
+            <h3>Code Explainer</h3>
+            <p>Understand programming code more easily.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="story generator">
+            <div class="app-icon">📚</div>
+            <h3>Story Generator</h3>
+            <p>Generate creative stories and ideas.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="youtube title generator">
+            <div class="app-icon">▶️</div>
+            <h3>YouTube Title Generator</h3>
+            <p>Generate interesting video title ideas.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="image description generator">
+            <div class="app-icon">🖼️</div>
+            <h3>Image Description Generator</h3>
+            <p>Generate descriptions for images.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="flashcard generator">
+            <div class="app-icon">🗂️</div>
+            <h3>Flashcard Generator</h3>
+            <p>Create flashcards for studying and revision.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+          <article class="app-card" data-name="website color palette">
+            <div class="app-icon">🎨</div>
+            <h3>Website Color Palette</h3>
+            <p>Discover color combinations for web design.</p>
+            <span class="app-status coming">Coming Soon</span>
+          </article>
+
+        </div>
+
+        <p class="empty-message" id="emptyMessage">
+          No matching AI tools found.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+
+    <section id="features">
+      <div class="container">
+
+        <h2 class="section-title">Why AI TOOLS?</h2>
+
+        <p class="section-subtitle">
+          Simple access to useful AI applications.
+        </p>
+
+        <div class="features">
+
+          <div class="feature">
+            <div class="app-icon">⚡</div>
+            <h3>Easy to Use</h3>
+            <p>Simple interfaces designed for a smooth experience.</p>
+          </div>
+
+          <div class="feature">
+            <div class="app-icon">📲</div>
+            <h3>Mobile Friendly</h3>
+            <p>Explore our website on mobile phones and computers.</p>
+          </div>
+
+          <div class="feature">
+            <div class="app-icon">🚀</div>
+            <h3>Growing Collection</h3>
+            <p>Discover new applications as they become available.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUEFRAME INFORMATION, RATING AND FEEDBACK -->
+
+    <section id="trueframe">
+      <div class="container">
+
+        <h2 class="section-title">About TrueFrame</h2>
+
+        <p class="section-subtitle">
+          Learn more about our available application.
+        </p>
+
+        <div class="details-box">
+
+          <div class="app-icon" style="margin: 0 auto 15px;">
+            🛡️
+          </div>
+
+          <h3>TrueFrame AI Detector</h3>
+
+          <p>
+            TrueFrame is an application designed to help distinguish
+            AI-generated content from real content.
+            It supports image, video and text detection features.
+          </p>
+
+          <a
+            class="download-btn"
+            href="https://github.com/Manojxear/TRUE-FRAME/releases/download/AI/trueframe.apk"
+            target="_blank"
+            rel="noopener noreferrer">
+            ⬇ Download TrueFrame APK
+          </a>
+
+          <div class="rating">
+
+            <p>⭐ Rate TrueFrame</p>
+
+            <div class="stars" id="stars">
+              <button type="button" data-rating="1" aria-label="1 star">★</button>
+              <button type="button" data-rating="2" aria-label="2 stars">★</button>
+              <button type="button" data-rating="3" aria-label="3 stars">★</button>
+              <button type="button" data-rating="4" aria-label="4 stars">★</button>
+              <button type="button" data-rating="5" aria-label="5 stars">★</button>
+            </div>
+
+            <p class="rating-message" id="ratingMessage"></p>
+
+          </div>
+
+          <div class="feedback">
+
+            <label for="feedbackText">
+              💬 Send your feedback
+            </label>
+
+            <textarea
+              id="feedbackText"
+              placeholder="Write your feedback here..."></textarea>
+
+            <button type="button" id="feedbackBtn">
+              Submit Feedback
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ADSTERRA REFERRAL -->
+
+    <section id="referral">
+      <div class="container">
+
+        <div class="referral-box">
+
+          <h2>Discover Adsterra</h2>
+
+          <p>
+            Interested in website monetization?
+            Explore Adsterra through my referral li
