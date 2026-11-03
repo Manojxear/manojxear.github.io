@@ -1035,4 +1035,36 @@
           "-star rating is saved on this device.";
       });
     });
-          
+
+    
+    /* FEEDBACK EMAIL */
+
+    document.getElementById("feedbackBtn")
+      .addEventListener("click", function () {
+
+        const feedback = document
+          .getElementById("feedbackText")
+          .value.trim();
+
+        if (!feedback) {
+          alert("Please enter your feedback first.");
+          return;
+        }
+
+        const subject = encodeURIComponent("TrueFrame Feedback");
+
+        const body = encodeURIComponent(
+          "Hello Manoj,\n\nMy feedback about TrueFrame:\n\n" +
+          feedback +
+          "\n\nThank you."
+        );
+
+        window.location.href =
+          "mailto:nethamanoj36@gmail.com?subject=" +
+          subject + "&body=" + body;
+      });
+  </script>
+
+</body>
+</html>
+
